@@ -1,0 +1,331 @@
+/* =========================================
+   Filters Container
+========================================= */
+
+.filters {
+  width: 100%;
+  margin: 24px 0;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  box-shadow:
+    0 4px 20px rgba(15, 23, 42, 0.05);
+
+  direction: rtl;
+}
+
+
+/* =========================================
+   Filters Header
+========================================= */
+
+.filters__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.filters__header h2 {
+  margin: 0 0 5px;
+
+  color: #172554;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+.filters__header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   Filters Grid
+========================================= */
+
+.filters__grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr))
+    auto;
+
+  gap: 16px;
+
+  align-items: end;
+}
+
+
+/* =========================================
+   Filter Field
+========================================= */
+
+.filters__field {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+/* =========================================
+   Labels
+========================================= */
+
+.filters__field label {
+  display: block;
+
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   Select
+========================================= */
+
+.filters__field select {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  color: #172554;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Hover */
+
+.filters__field select:hover {
+  border-color: #bfdbfe;
+
+  background: #ffffff;
+}
+
+
+/* Focus */
+
+.filters__field select:focus {
+  border-color: #2563eb;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================
+   Reset Button
+========================================= */
+
+.filters__reset {
+  height: 44px;
+
+  padding: 0 18px;
+
+  border: 1px solid #172554;
+  border-radius: 10px;
+
+  background: #172554;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+.filters__reset:hover {
+  background: #1e3a8a;
+
+  border-color: #1e3a8a;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 15px rgba(23, 37, 84, 0.18);
+}
+
+
+/* Active */
+
+.filters__reset:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+
+/* =========================================
+   Tablet
+========================================= */
+
+@media (max-width: 950px) {
+
+  .filters {
+    padding: 20px;
+  }
+
+  .filters__grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .filters__reset {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   Small Tablet
+========================================= */
+
+@media (max-width: 700px) {
+
+  .filters {
+    padding: 18px;
+  }
+
+  .filters__header {
+    margin-bottom: 16px;
+  }
+
+  .filters__header h2 {
+    font-size: 17px;
+  }
+
+  .filters__header p {
+    font-size: 12px;
+  }
+
+  .filters__grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .filters__field select {
+    height: 43px;
+  }
+
+  .filters__reset {
+    height: 43px;
+  }
+}
+
+
+/* =========================================
+   Mobile
+========================================= */
+
+@media (max-width: 480px) {
+
+  .filters {
+    margin: 18px 0;
+
+    padding: 15px;
+
+    border-radius: 14px;
+  }
+
+  .filters__header {
+    margin-bottom: 15px;
+  }
+
+  .filters__header h2 {
+    font-size: 16px;
+  }
+
+  .filters__header p {
+    font-size: 11px;
+  }
+
+  .filters__grid {
+    gap: 12px;
+  }
+
+  .filters__field {
+    gap: 6px;
+  }
+
+  .filters__field label {
+    font-size: 11px;
+  }
+
+  .filters__field select {
+    height: 42px;
+
+    padding: 0 12px;
+
+    font-size: 12px;
+  }
+
+  .filters__reset {
+    height: 42px;
+
+    font-size: 12px;
+  }
+}

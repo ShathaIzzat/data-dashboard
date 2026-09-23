@@ -1,0 +1,369 @@
+/* =========================================
+   Stats Container
+========================================= */
+
+.stats {
+  width: 100%;
+
+  margin: 24px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+
+  direction: rtl;
+}
+
+
+/* =========================================
+   Stat Card
+========================================= */
+
+.stat-card {
+  position: relative;
+
+  min-height: 125px;
+
+  padding: 20px 22px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 18px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* =========================================
+   Hover
+========================================= */
+
+.stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #dbeafe;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================
+   Decorative Side Line
+========================================= */
+
+.stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 4px;
+
+  background: #2563eb;
+
+  transition:
+    width 0.2s ease;
+}
+
+.stat-card:hover::before {
+  width: 5px;
+}
+
+
+/* =========================================
+   Content
+========================================= */
+
+.stat-card__content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* =========================================
+   Title
+========================================= */
+
+.stat-card__title {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   Value
+========================================= */
+
+.stat-card__value {
+  display: block;
+
+  color: #172554;
+
+  font-size: 30px;
+
+  font-weight: 750;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================
+   Icon
+========================================= */
+
+.stat-card__icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 12px;
+
+  border-radius: 12px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.stat-card:hover .stat-card__icon {
+  transform: scale(1.04);
+}
+
+
+/* =========================================
+   Total
+========================================= */
+
+.stat-card--total::before {
+  background: #2563eb;
+}
+
+.stat-card--total .stat-card__icon {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+
+/* =========================================
+   Beneficiary
+========================================= */
+
+.stat-card--beneficiary::before {
+  background: #16a34a;
+}
+
+.stat-card--beneficiary .stat-card__icon {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+
+/* =========================================
+   Non Beneficiary
+========================================= */
+
+.stat-card--non-beneficiary::before {
+  background: #f59e0b;
+}
+
+.stat-card--non-beneficiary .stat-card__icon {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+
+/* =========================================
+   Sheets
+========================================= */
+
+.stat-card--sheets::before {
+  background: #7c3aed;
+}
+
+.stat-card--sheets .stat-card__icon {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+
+/* =========================================
+   Tablet
+========================================= */
+
+@media (max-width: 950px) {
+
+  .stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  .stat-card {
+    min-height: 120px;
+
+    padding: 18px 20px;
+  }
+}
+
+
+/* =========================================
+   Small Tablet
+========================================= */
+
+@media (max-width: 700px) {
+
+  .stats {
+    margin: 20px 0;
+
+    gap: 12px;
+  }
+
+  .stat-card {
+    min-height: 110px;
+
+    padding: 16px 18px;
+
+    border-radius: 14px;
+  }
+
+  .stat-card__icon {
+    width: 43px;
+    height: 43px;
+
+    margin-right: 8px;
+
+    border-radius: 10px;
+
+    font-size: 19px;
+  }
+
+  .stat-card__title {
+    font-size: 11px;
+  }
+
+  .stat-card__value {
+    font-size: 26px;
+  }
+}
+
+
+/* =========================================
+   Mobile
+========================================= */
+
+@media (max-width: 520px) {
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .stat-card {
+    min-height: 105px;
+
+    padding: 14px;
+  }
+
+  .stat-card__icon {
+    width: 38px;
+    height: 38px;
+
+    margin-right: 6px;
+
+    border-radius: 9px;
+
+    font-size: 17px;
+  }
+
+  .stat-card__title {
+    margin-bottom: 5px;
+
+    font-size: 10px;
+  }
+
+  .stat-card__value {
+    font-size: 23px;
+  }
+}
+
+
+/* =========================================
+   Very Small Mobile
+========================================= */
+
+@media (max-width: 360px) {
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    min-height: 90px;
+
+    padding: 14px 16px;
+  }
+
+  .stat-card__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .stat-card__value {
+    font-size: 24px;
+  }
+}

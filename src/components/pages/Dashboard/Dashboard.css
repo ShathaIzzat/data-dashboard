@@ -1,0 +1,518 @@
+/* =========================================
+   Dashboard - Main Layout
+========================================= */
+
+.dashboard {
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f7fb;
+  color: #172554;
+  direction: rtl;
+}
+
+/* =========================================
+   Main Content
+========================================= */
+
+.dashboard__content {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 30px 0 50px;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   Search Clear
+========================================= */
+
+.search-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 12px;
+  margin-bottom: 4px;
+
+  padding: 8px 14px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.search-clear:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #172554;
+}
+
+/* =========================================
+   Messages
+========================================= */
+
+.dashboard__message {
+  width: 100%;
+  margin-top: 25px;
+  padding: 45px 25px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  color: #64748b;
+  text-align: center;
+  font-size: 14px;
+
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+.dashboard__error {
+  width: 100%;
+  margin-top: 25px;
+  padding: 18px 20px;
+
+  box-sizing: border-box;
+
+  background: #fff7f7;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+
+  color: #b91c1c;
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* =========================================
+   Welcome / Empty Search State
+========================================= */
+
+.dashboard__welcome {
+  width: 100%;
+  margin-top: 25px;
+  padding: 55px 25px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  text-align: center;
+
+  box-shadow:
+    0 4px 18px rgba(15, 23, 42, 0.05);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative top line */
+
+.dashboard__welcome::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #172554,
+    #2563eb,
+    #60a5fa,
+    #2563eb,
+    #172554
+  );
+}
+
+.dashboard__welcome h3 {
+  margin: 0 0 10px;
+
+  color: #172554;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.dashboard__welcome p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   General Card Consistency
+========================================= */
+
+.dashboard__content > * {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   Smooth Page Appearance
+========================================= */
+
+.dashboard {
+  animation: dashboardFadeIn 0.35s ease;
+}
+
+@keyframes dashboardFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   Tablet
+========================================= */
+
+@media (max-width: 900px) {
+  .dashboard__content {
+    width: min(100% - 30px, 760px);
+    padding-top: 25px;
+    padding-bottom: 40px;
+  }
+}
+
+/* =========================================
+   Mobile
+========================================= */
+
+@media (max-width: 600px) {
+  .dashboard__content {
+    width: calc(100% - 24px);
+    padding: 18px 0 35px;
+  }
+
+  .search-clear {
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+
+  .dashboard__welcome {
+    margin-top: 18px;
+    padding: 45px 18px;
+  }
+
+  .dashboard__welcome h3 {
+    font-size: 18px;
+  }
+
+  .dashboard__welcome p {
+    font-size: 13px;
+  }
+
+  .dashboard__message {
+    margin-top: 18px;
+    padding: 35px 18px;
+  }
+
+  .dashboard__error {
+    margin-top: 18px;
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   Small Mobile
+========================================= */
+
+@media (max-width: 400px) {
+  .dashboard__content {
+    width: calc(100% - 18px);
+  }
+
+  .dashboard__welcome {
+    padding: 40px 14px;
+  }
+}
+
+/* =========================================
+   Loading Screen
+========================================= */
+
+.dashboard__loading {
+  position: relative;
+
+  width: 100%;
+  margin-top: 25px;
+  padding: 60px 25px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow:
+    0 5px 22px rgba(15, 23, 42, 0.06);
+
+  overflow: hidden;
+
+  animation: loadingFadeIn 0.35s ease;
+}
+
+/* الخط العلوي */
+
+.dashboard__loading::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #172554,
+    #2563eb,
+    #60a5fa,
+    #2563eb,
+    #172554
+  );
+}
+
+/* =========================================
+   Loader
+========================================= */
+
+.dashboard__loader {
+  position: relative;
+
+  width: 78px;
+  height: 78px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* الحلقة */
+
+.dashboard__loader-ring {
+  position: absolute;
+
+  inset: 0;
+
+  border: 4px solid #e5edff;
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: loaderSpin 1s linear infinite;
+}
+
+/* الحلقة الداخلية */
+
+.dashboard__loader::after {
+  content: "";
+
+  position: absolute;
+
+  width: 58px;
+  height: 58px;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 50%;
+}
+
+/* الأيقونة */
+
+.dashboard__loader-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eff6ff;
+
+  border-radius: 50%;
+
+  font-size: 22px;
+
+  animation: loaderPulse 1.5s ease-in-out infinite;
+}
+
+/* =========================================
+   Loading Text
+========================================= */
+
+.dashboard__loading h3 {
+  margin: 0 0 8px;
+
+  color: #172554;
+
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.dashboard__loading p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   Loading Bar
+========================================= */
+
+.dashboard__loading-bar {
+  width: min(280px, 80%);
+
+  height: 5px;
+
+  margin: 24px auto 0;
+
+  background: #eaf0f8;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.dashboard__loading-bar span {
+  display: block;
+
+  width: 40%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #172554,
+    #2563eb,
+    #60a5fa
+  );
+
+  animation: loadingBar 1.5s ease-in-out infinite;
+}
+
+/* =========================================
+   Animations
+========================================= */
+
+@keyframes loaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes loadingBar {
+  0% {
+    transform: translateX(-180%);
+  }
+
+  50% {
+    transform: translateX(80%);
+  }
+
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+@keyframes loadingFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   Mobile
+========================================= */
+
+@media (max-width: 600px) {
+  .dashboard__loading {
+    margin-top: 18px;
+    padding: 50px 18px;
+    border-radius: 15px;
+  }
+
+  .dashboard__loader {
+    width: 68px;
+    height: 68px;
+
+    margin-bottom: 18px;
+  }
+
+  .dashboard__loader-icon {
+    width: 43px;
+    height: 43px;
+
+    font-size: 20px;
+  }
+
+  .dashboard__loader h3 {
+    font-size: 18px;
+  }
+
+  .dashboard__loading p {
+    font-size: 12px;
+  }
+
+  .dashboard__loading-bar {
+    width: 75%;
+  }
+}
